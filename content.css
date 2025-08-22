@@ -1,0 +1,374 @@
+/* ========================================
+   WP Admin Bar Controller - Content Styles
+   ======================================== */
+
+/* --- Hide Admin Bar --- */
+#wpadminbar.wpab-hidden {
+  display: none !important;
+}
+
+html.wpab-bar-hidden {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html.wpab-bar-hidden body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* --- Bottom Position --- */
+#wpadminbar.wpab-bottom {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 32px !important;
+}
+
+html.wpab-bar-bottom {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html.wpab-bar-bottom body {
+  margin-top: 0 !important;
+  padding-bottom: 32px !important;
+}
+
+/* --- Left Position --- */
+#wpadminbar.wpab-left {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: 48px !important;
+  height: 100vh !important;
+  flex-direction: column !important;
+  display: flex !important;
+}
+
+#wpadminbar.wpab-left .quicklinks {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+#wpadminbar.wpab-left .quicklinks > ul {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#wpadminbar.wpab-left .quicklinks > ul > li {
+  width: 100% !important;
+}
+
+#wpadminbar.wpab-left .quicklinks > ul > li > a,
+#wpadminbar.wpab-left .quicklinks > ul > li > .ab-item {
+  padding: 8px 12px !important;
+  text-align: center !important;
+  font-size: 0 !important;
+}
+
+#wpadminbar.wpab-left .quicklinks > ul > li > a .ab-icon,
+#wpadminbar.wpab-left .quicklinks > ul > li > .ab-item .ab-icon {
+  font-size: 20px !important;
+  margin: 0 !important;
+}
+
+#wpadminbar.wpab-left .quicklinks > ul > li > a .ab-label,
+#wpadminbar.wpab-left .quicklinks > ul > li > .ab-item .ab-label,
+#wpadminbar.wpab-left #wp-admin-bar-site-name .ab-item::after {
+  display: none !important;
+}
+
+#wpadminbar.wpab-left #wp-admin-bar-top-secondary {
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+}
+
+#wpadminbar.wpab-left .ab-sub-wrapper,
+#wpadminbar.wpab-left .ab-submenu {
+  left: 48px !important;
+  top: 0 !important;
+  right: auto !important;
+}
+
+html.wpab-bar-left {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html.wpab-bar-left body {
+  margin-top: 0 !important;
+  margin-left: 48px !important;
+}
+
+/* --- Right Position --- */
+#wpadminbar.wpab-right {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: 0 !important;
+  width: 48px !important;
+  height: 100vh !important;
+  flex-direction: column !important;
+  display: flex !important;
+}
+
+#wpadminbar.wpab-right .quicklinks {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+#wpadminbar.wpab-right .quicklinks > ul {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#wpadminbar.wpab-right .quicklinks > ul > li {
+  width: 100% !important;
+}
+
+#wpadminbar.wpab-right .quicklinks > ul > li > a,
+#wpadminbar.wpab-right .quicklinks > ul > li > .ab-item {
+  padding: 8px 12px !important;
+  text-align: center !important;
+  font-size: 0 !important;
+}
+
+#wpadminbar.wpab-right .quicklinks > ul > li > a .ab-icon,
+#wpadminbar.wpab-right .quicklinks > ul > li > .ab-item .ab-icon {
+  font-size: 20px !important;
+  margin: 0 !important;
+}
+
+#wpadminbar.wpab-right .quicklinks > ul > li > a .ab-label,
+#wpadminbar.wpab-right .quicklinks > ul > li > .ab-item .ab-label,
+#wpadminbar.wpab-right #wp-admin-bar-site-name .ab-item::after {
+  display: none !important;
+}
+
+#wpadminbar.wpab-right #wp-admin-bar-top-secondary {
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+}
+
+#wpadminbar.wpab-right .ab-sub-wrapper,
+#wpadminbar.wpab-right .ab-submenu {
+  right: 48px !important;
+  left: auto !important;
+  top: 0 !important;
+}
+
+html.wpab-bar-right {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html.wpab-bar-right body {
+  margin-top: 0 !important;
+  margin-right: 48px !important;
+}
+
+/* --- Scrollable --- */
+#wpadminbar.wpab-scrollable {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+#wpadminbar.wpab-scrollable.wpab-left,
+#wpadminbar.wpab-scrollable.wpab-right {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+#wpadminbar.wpab-scrollable::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+#wpadminbar.wpab-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#wpadminbar.wpab-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+#wpadminbar.wpab-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Draggable --- */
+#wpadminbar.wpab-draggable {
+  position: fixed !important;
+  z-index: 99999 !important;
+  user-select: none !important;
+  transition: none !important;
+}
+
+/* ========================================
+   Bubble Mode Styles
+   ======================================== */
+
+#wpab-bubble {
+  position: fixed;
+  z-index: 2147483647;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #23282d 0%, #32373c 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+#wpab-bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#wpab-bubble.wpab-bubble-open {
+  background: linear-gradient(135deg, #0073aa 0%, #005a87 100%);
+  transform: scale(1.05);
+}
+
+#wpab-bubble svg {
+  pointer-events: none;
+}
+
+/* --- Bubble Menu --- */
+#wpab-bubble-menu {
+  position: fixed;
+  z-index: 2147483646;
+  width: 240px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #23282d;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 6px 0;
+  animation: wpab-menu-in 0.15s ease-out;
+}
+
+@keyframes wpab-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#wpab-bubble-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+#wpab-bubble-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#wpab-bubble-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+#wpab-bubble-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Bubble Menu Items --- */
+.wpab-bubble-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.wpab-bubble-item {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.wpab-bubble-link {
+  display: block !important;
+  padding: 10px 16px !important;
+  color: #c3c4c7 !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  line-height: 1.4 !important;
+  transition: background 0.15s, color 0.15s !important;
+  border: none !important;
+  background: none !important;
+}
+
+.wpab-bubble-link:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #00b9eb !important;
+}
+
+.wpab-has-sub > .wpab-bubble-link::after {
+  content: '' !important;
+  display: inline-block !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 4px solid currentColor !important;
+  border-top: 4px solid transparent !important;
+  border-bottom: 4px solid transparent !important;
+  margin-left: 8px !important;
+  vertical-align: middle !important;
+  transition: transform 0.2s !important;
+}
+
+.wpab-has-sub.wpab-sub-open > .wpab-bubble-link::after {
+  transform: rotate(90deg) !important;
+}
+
+/* --- Bubble Submenu --- */
+.wpab-bubble-sublist {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: none;
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.wpab-bubble-sublink {
+  display: block !important;
+  padding: 8px 16px 8px 28px !important;
+  color: #a0a5aa !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  line-height: 1.4 !important;
+  transition: background 0.15s, color 0.15s !important;
+  border: none !important;
+  background: none !important;
+}
+
+.wpab-bubble-sublink:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #00b9eb !important;
+}
+
+/* --- Bubble Menu Separator --- */
+.wpab-bubble-item + .wpab-bubble-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
