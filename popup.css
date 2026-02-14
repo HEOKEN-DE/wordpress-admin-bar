@@ -133,7 +133,7 @@ body {
   color: var(--text-secondary);
 }
 
-.setting-icon svg {
+.setting-icon img {
   width: 16px;
   height: 16px;
 }
@@ -255,7 +255,7 @@ body {
   color: var(--text-secondary);
 }
 
-.action-icon svg {
+.action-icon img {
   width: 14px;
   height: 14px;
 }
@@ -282,8 +282,9 @@ body {
   color: #ffdd00;
 }
 
-.coffee-link svg {
-  color: #ffdd00;
+.coffee-icon {
+  width: 14px;
+  height: 14px;
 }
 
 .version {
