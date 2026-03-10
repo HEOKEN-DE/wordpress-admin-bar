@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 91.59 61.87">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Gold_Radial_copy-3);
+      }
+
+      .cls-2 {
+        fill: url(#Gold_Radial_copy-2);
+      }
+
+      .cls-3 {
+        fill: url(#Gold_Radial_copy-4);
+      }
+
+      .cls-4 {
+        fill: url(#Gold_Radial_copy);
+      }
+    </style>
+    <radialGradient id="Gold_Radial_copy" data-name="Gold Radial copy" cx="45.79" cy="30.93" fx="45.79" fy="30.93" r="39.08" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffacb"/>
+      <stop offset=".12" stop-color="#faf0b9"/>
+      <stop offset=".35" stop-color="#eed88d"/>
+      <stop offset=".37" stop-color="#edd688"/>
+      <stop offset=".69" stop-color="#eaba10"/>
+      <stop offset="1" stop-color="#c2912e"/>
+    </radialGradient>
+    <radialGradient id="Gold_Radial_copy-2" data-name="Gold Radial copy" cx="23.23" cy="30.96" fx="23.23" fy="30.96" r="13.34" xlink:href="#Gold_Radial_copy"/>
+    <radialGradient id="Gold_Radial_copy-3" data-name="Gold Radial copy" cx="68.36" cy="30.96" fx="68.36" fy="30.96" r="13.34" xlink:href="#Gold_Radial_copy"/>
+    <radialGradient id="Gold_Radial_copy-4" data-name="Gold Radial copy" cx="45.79" cy="31.02" fx="45.79" fy="31.02" r="13.56" xlink:href="#Gold_Radial_copy"/>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-4" d="M88.4,61.87H3.19c-1.76,0-3.19-1.43-3.19-3.19V3.19C0,1.43,1.43,0,3.19,0h85.21c1.76,0,3.19,1.43,3.19,3.19v55.49c0,1.76-1.43,3.19-3.19,3.19ZM6.38,55.49h78.84V6.38H6.38v49.12Z"/>
+      <g>
+        <path class="cls-2" d="M30.34,46.76c-.75,0-1.51-.26-2.11-.8l-14.23-12.62c-.68-.6-1.07-1.47-1.07-2.39s.39-1.78,1.07-2.39l14.23-12.62c1.32-1.17,3.33-1.05,4.5.27,1.17,1.32,1.05,3.33-.27,4.5l-11.54,10.23,11.54,10.23c1.32,1.17,1.44,3.18.27,4.5-.63.71-1.51,1.07-2.39,1.07Z"/>
+        <path class="cls-1" d="M61.25,46.76c-.88,0-1.76-.36-2.39-1.07-1.17-1.32-1.05-3.33.27-4.5l11.54-10.23-11.54-10.23c-1.32-1.17-1.44-3.18-.27-4.5,1.17-1.32,3.18-1.44,4.5-.27l14.23,12.62c.68.6,1.07,1.47,1.07,2.39s-.39,1.78-1.07,2.39l-14.23,12.62c-.61.54-1.36.8-2.11.8Z"/>
+      </g>
+      <path class="cls-3" d="M40.44,48.19c-.38,0-.76-.07-1.14-.21-1.64-.63-2.47-2.47-1.84-4.12l10.71-27.97c.63-1.64,2.47-2.47,4.12-1.84,1.64.63,2.47,2.47,1.84,4.12l-10.71,27.97c-.49,1.27-1.69,2.05-2.98,2.05Z"/>
+    </g>
+  </g>
+</svg>

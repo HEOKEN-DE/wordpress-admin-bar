@@ -14,6 +14,7 @@
   --btn-hover: #3a3a4e;
   --pos-active-bg: rgba(244, 129, 32, 0.15);
   --pos-active-border: #f48120;
+  --icon-filter: invert(1);
 }
 
 [data-theme="light"] {
@@ -31,6 +32,7 @@
   --btn-hover: #d8d8d8;
   --pos-active-bg: rgba(244, 129, 32, 0.1);
   --pos-active-border: #f48120;
+  --icon-filter: none;
 }
 
 /* === Base === */
@@ -66,6 +68,8 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 8px;
+  background: #1d2327;
+  padding: 4px;
 }
 
 .popup-title {
@@ -133,9 +137,10 @@ body {
   color: var(--text-secondary);
 }
 
-.setting-icon svg {
+.setting-icon img {
   width: 16px;
   height: 16px;
+  filter: var(--icon-filter);
 }
 
 /* === Toggle Button === */
@@ -205,8 +210,15 @@ body {
   color: #f48120;
 }
 
-.position-btn svg {
+.position-btn img {
+  width: 16px;
+  height: 16px;
+  filter: var(--icon-filter);
   flex-shrink: 0;
+}
+
+.position-btn.active img {
+  filter: var(--icon-filter);
 }
 
 /* === Action Buttons === */
@@ -255,9 +267,10 @@ body {
   color: var(--text-secondary);
 }
 
-.action-icon svg {
+.action-icon img {
   width: 14px;
   height: 14px;
+  filter: var(--icon-filter);
 }
 
 /* === Footer === */
@@ -282,8 +295,10 @@ body {
   color: #ffdd00;
 }
 
-.coffee-link svg {
-  color: #ffdd00;
+.coffee-icon {
+  width: 14px;
+  height: 14px;
+  filter: var(--icon-filter);
 }
 
 .version {

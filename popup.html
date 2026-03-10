@@ -8,7 +8,7 @@
 <body>
   <div id="popup" data-theme="dark">
     <div class="popup-header">
-      <img src="icons/logo.svg" alt="WP Admin Bar" class="popup-logo">
+      <img src="icons/wpbar-logo.svg" alt="WP Admin Bar" class="popup-logo">
       <div class="popup-title">
         <span>WP Admin<span class="accent">Bar</span></span>
         <span class="popup-subtitle">Controller</span>
@@ -19,7 +19,7 @@
       <div class="section-label">Appearance</div>
       <div class="setting-row">
         <div class="setting-label">
-          <span class="setting-icon" id="themeIcon"></span>
+          <span class="setting-icon"><img id="themeIcon" src="icons/moon.svg" alt=""></span>
           <span id="themeLabel">Dark Mode</span>
         </div>
         <button class="toggle-btn active" id="themeToggle" aria-label="Toggle theme">
@@ -28,7 +28,7 @@
       </div>
       <div class="setting-row">
         <div class="setting-label">
-          <span class="setting-icon" id="visibilityIcon"></span>
+          <span class="setting-icon"><img id="visibilityIcon" src="icons/eye.svg" alt=""></span>
           <span id="visibilityLabel">Visible</span>
         </div>
         <button class="toggle-btn active" id="visibilityToggle" aria-label="Toggle visibility">
@@ -41,7 +41,7 @@
       <div class="section-label">Display Mode</div>
       <div class="setting-row">
         <div class="setting-label">
-          <span class="setting-icon" id="modeIcon"></span>
+          <span class="setting-icon"><img id="modeIcon" src="icons/bar.svg" alt=""></span>
           <span id="modeLabel">Default Bar</span>
         </div>
         <button class="toggle-btn" id="modeToggle" aria-label="Toggle bubble mode">
@@ -50,19 +50,10 @@
       </div>
       <div class="setting-row">
         <div class="setting-label">
-          <span class="setting-icon" id="scrollIcon"></span>
-          <span>Scrollable</span>
+          <span class="setting-icon"><img id="flexibleIcon" src="icons/flexible.svg" alt=""></span>
+          <span>Flexible</span>
         </div>
-        <button class="toggle-btn" id="scrollToggle" aria-label="Toggle scrollable">
-          <span class="toggle-thumb"></span>
-        </button>
-      </div>
-      <div class="setting-row">
-        <div class="setting-label">
-          <span class="setting-icon" id="dragIcon"></span>
-          <span>Draggable</span>
-        </div>
-        <button class="toggle-btn" id="dragToggle" aria-label="Toggle draggable">
+        <button class="toggle-btn" id="flexibleToggle" aria-label="Toggle flexible">
           <span class="toggle-thumb"></span>
         </button>
       </div>
@@ -72,19 +63,19 @@
       <div class="section-label">Position</div>
       <div class="position-grid">
         <button class="position-btn active" data-position="top" title="Top">
-          <svg width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M208,36H48A12,12,0,0,0,36,48V208a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V48A12,12,0,0,0,208,36Zm-4,8V92H52V44ZM52,212V116H204V212Z"/></svg>
+          <img src="icons/pos-top.svg" alt="">
           <span>Top</span>
         </button>
         <button class="position-btn" data-position="bottom" title="Bottom">
-          <svg width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M208,36H48A12,12,0,0,0,36,48V208a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V48A12,12,0,0,0,208,36ZM52,44H204V140H52ZM204,212H52V164H204Z"/></svg>
+          <img src="icons/pos-bottom.svg" alt="">
           <span>Bottom</span>
         </button>
         <button class="position-btn" data-position="left" title="Left">
-          <svg width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M208,36H48A12,12,0,0,0,36,48V208a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V48A12,12,0,0,0,208,36ZM52,44H92V212H52ZM204,212H116V44h88Z"/></svg>
+          <img src="icons/pos-left.svg" alt="">
           <span>Left</span>
         </button>
         <button class="position-btn" data-position="right" title="Right">
-          <svg width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M208,36H48A12,12,0,0,0,36,48V208a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V48A12,12,0,0,0,208,36ZM52,44H140V212H52ZM204,212H164V44h40Z"/></svg>
+          <img src="icons/pos-right.svg" alt="">
           <span>Right</span>
         </button>
       </div>
@@ -92,20 +83,18 @@
 
     <div class="popup-section popup-actions" id="siteSection">
       <button class="action-btn" id="toggleSiteBtn">
-        <span class="action-icon" id="siteIcon"></span>
+        <span class="action-icon"><img id="siteIcon" src="icons/hide.svg" alt=""></span>
         <span id="siteBtnLabel">Hide on this site</span>
       </button>
       <button class="action-btn action-btn-reset" id="resetBtn">
-        <span class="action-icon">
-          <svg width="14" height="14" viewBox="0 0 256 256"><path fill="currentColor" d="M228,128a100,100,0,0,1-98.07,100H128a99.39,99.39,0,0,1-68.57-27.21,4,4,0,0,1,5.5-5.82A92,92,0,1,0,36,128a91.25,91.25,0,0,0,5.87,32.46L68.63,137.7a4,4,0,0,1,5.67,5.64L41.7,176a4,4,0,0,1-2.83,1.17h-.35a4,4,0,0,1-2.82-1.52A100,100,0,0,1,228,128Z"/></svg>
-        </span>
+        <span class="action-icon"><img src="icons/reset.svg" alt=""></span>
         <span>Reset to defaults</span>
       </button>
     </div>
 
     <div class="popup-footer">
       <a href="https://buymeacoffee.com/wasim.alhafez" target="_blank" class="coffee-link">
-        <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H32a8,8,0,0,0-8,8v48a96.3,96.3,0,0,0,32.09,71.64A8,8,0,0,0,61.44,208H178.56a8,8,0,0,0,5.35-.36A96.3,96.3,0,0,0,216,136V88A8,8,0,0,0,208,80Zm-8,56a80.27,80.27,0,0,1-26.76,59.78H66.76A80.27,80.27,0,0,1,40,136V96H200ZM224,48a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H216A8,8,0,0,1,224,48Z"/></svg>
+        <img src="icons/coffee.svg" alt="" class="coffee-icon">
         Buy me a coffee
       </a>
       <span class="version">v1.0.0</span>

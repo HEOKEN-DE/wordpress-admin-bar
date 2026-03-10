@@ -38,11 +38,11 @@ html.wpab-bar-bottom body {
   padding-bottom: 32px !important;
 }
 
-/* --- Left Position (pure rotation) --- */
+/* --- Left Position (pure rotation, no margin) --- */
 #wpadminbar.wpab-left {
   position: fixed !important;
   top: 100vh !important;
-  left: 32px !important;
+  left: 0 !important;
   right: auto !important;
   bottom: auto !important;
   width: 100vh !important;
@@ -58,19 +58,18 @@ html.wpab-bar-left {
 
 html.wpab-bar-left body {
   margin-top: 0 !important;
-  margin-left: 32px !important;
 }
 
-/* --- Right Position (pure rotation) --- */
+/* --- Right Position (pure rotation, no margin) --- */
 #wpadminbar.wpab-right {
   position: fixed !important;
-  top: 0 !important;
-  left: auto !important;
-  right: 32px !important;
+  top: 100vh !important;
+  left: initial !important;
+  right: 0 !important;
   bottom: auto !important;
   width: 100vh !important;
   height: 32px !important;
-  transform-origin: top right !important;
+  transform-origin: right top !important;
   transform: rotate(90deg) !important;
 }
 
@@ -81,39 +80,101 @@ html.wpab-bar-right {
 
 html.wpab-bar-right body {
   margin-top: 0 !important;
-  margin-right: 32px !important;
 }
 
-/* --- Scrollable --- */
-#wpadminbar.wpab-scrollable {
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-}
-
-#wpadminbar.wpab-scrollable::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-#wpadminbar.wpab-scrollable::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#wpadminbar.wpab-scrollable::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-}
-
-#wpadminbar.wpab-scrollable::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-/* --- Draggable --- */
-#wpadminbar.wpab-draggable {
+/* --- Flexible (scrollable + draggable + resizable) --- */
+#wpadminbar.wpab-flexible {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
   position: fixed !important;
-  z-index: 99999 !important;
+  z-index: 2147483647 !important;
   user-select: none !important;
   transition: none !important;
+  overflow: visible !important;
+}
+
+#wpadminbar.wpab-flexible .quicklinks {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+#wpadminbar.wpab-flexible .quicklinks > ul {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  float: none !important;
+}
+
+#wpadminbar.wpab-flexible .quicklinks > ul > li {
+  float: none !important;
+  flex-shrink: 0 !important;
+}
+
+#wpadminbar.wpab-flexible #wp-admin-bar-top-secondary {
+  margin-left: auto !important;
+}
+
+/* --- Resize Handle Bars (flanking the admin bar) --- */
+.wpab-resize-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 32px;
+  flex-shrink: 0;
+  cursor: ew-resize;
+  background: #1d2327;
+  border: 1px solid #3c434a;
+  transition: background 0.15s;
+  z-index: 2147483647;
+}
+
+.wpab-resize-handle-left {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+  order: -1;
+}
+
+.wpab-resize-handle-right {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+  order: 9999;
+}
+
+.wpab-resize-handle::before,
+.wpab-resize-handle::after {
+  content: '';
+  width: 2px;
+  height: 14px;
+  border-radius: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.15s;
+}
+
+.wpab-resize-handle::before {
+  margin-right: 2px;
+}
+
+.wpab-resize-handle:hover {
+  background: #2c3338;
+}
+
+.wpab-resize-handle:hover::before,
+.wpab-resize-handle:hover::after {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.wpab-resize-handle:active {
+  background: #0073aa;
+}
+
+.wpab-resize-handle:active::before,
+.wpab-resize-handle:active::after {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* --- Reset Position Button --- */
@@ -141,7 +202,7 @@ html.wpab-bar-right body {
   color: #00b9eb;
 }
 
-#wpab-reset-position svg {
+#wpab-reset-position img {
   pointer-events: none;
   flex-shrink: 0;
 }
@@ -150,6 +211,7 @@ html.wpab-bar-right body {
    Bubble Mode Styles
    ======================================== */
 
+/* --- Bubble trigger (favicon) --- */
 #wpab-bubble {
   position: fixed;
   z-index: 2147483647;
@@ -178,33 +240,31 @@ html.wpab-bar-right body {
   transform: scale(1.05);
 }
 
-#wpab-bubble img,
-#wpab-bubble svg {
-  pointer-events: none;
-}
-
 #wpab-bubble img {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   object-fit: cover;
+  pointer-events: none;
 }
 
-/* --- Bubble Menu (WP admin bar style) --- */
-#wpab-bubble-menu {
-  position: fixed;
-  z-index: 2147483646;
-  width: 240px;
-  max-height: 400px;
-  overflow-y: auto;
-  background: #1d2327;
-  border-radius: 4px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  padding: 0;
-  animation: wpab-menu-in 0.15s ease-out;
+/* --- Expanded admin bar (bubble mode dropdown) ---
+   This is the ACTUAL #wpadminbar restyled as a vertical menu via CSS.
+   No new HTML is created — just CSS transformation. */
+#wpadminbar.wpab-bubble-expanded {
+  position: fixed !important;
+  width: 280px !important;
+  height: auto !important;
+  max-height: 420px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+  z-index: 2147483646 !important;
+  animation: wpab-expand-in 0.15s ease-out !important;
 }
 
-@keyframes wpab-menu-in {
+@keyframes wpab-expand-in {
   from {
     opacity: 0;
     transform: translateY(-6px);
@@ -215,152 +275,77 @@ html.wpab-bar-right body {
   }
 }
 
-#wpab-bubble-menu::-webkit-scrollbar {
+/* Stack items vertically */
+#wpadminbar.wpab-bubble-expanded .quicklinks > ul {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+}
+
+#wpadminbar.wpab-bubble-expanded .quicklinks > ul > li {
+  float: none !important;
+  width: 100% !important;
+}
+
+#wpadminbar.wpab-bubble-expanded .quicklinks > ul > li > a,
+#wpadminbar.wpab-bubble-expanded .quicklinks > ul > li > .ab-item {
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+  padding: 6px 12px !important;
+  line-height: 24px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Submenus appear inline below parent (not flyout) */
+#wpadminbar.wpab-bubble-expanded .ab-sub-wrapper {
+  position: static !important;
+  display: none !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+#wpadminbar.wpab-bubble-expanded li:hover > .ab-sub-wrapper,
+#wpadminbar.wpab-bubble-expanded li.hover > .ab-sub-wrapper {
+  display: block !important;
+}
+
+#wpadminbar.wpab-bubble-expanded .ab-sub-wrapper ul {
+  position: static !important;
+}
+
+#wpadminbar.wpab-bubble-expanded .ab-sub-wrapper li a {
+  padding-left: 28px !important;
+  font-size: 12px !important;
+}
+
+/* Secondary menu (right side) stacks below */
+#wpadminbar.wpab-bubble-expanded #wp-admin-bar-top-secondary {
+  position: static !important;
+  float: none !important;
+  border-top: 1px solid #3c434a !important;
+}
+
+#wpadminbar.wpab-bubble-expanded #wp-admin-bar-top-secondary > li {
+  float: none !important;
+}
+
+/* Custom scrollbar for expanded bar */
+#wpadminbar.wpab-bubble-expanded::-webkit-scrollbar {
   width: 6px;
 }
 
-#wpab-bubble-menu::-webkit-scrollbar-track {
+#wpadminbar.wpab-bubble-expanded::-webkit-scrollbar-track {
   background: transparent;
 }
 
-#wpab-bubble-menu::-webkit-scrollbar-thumb {
+#wpadminbar.wpab-bubble-expanded::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 3px;
 }
 
-#wpab-bubble-menu::-webkit-scrollbar-thumb:hover {
+#wpadminbar.wpab-bubble-expanded::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.25);
-}
-
-/* --- Bubble Menu Items (match WP admin bar) --- */
-.wpab-bubble-list {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.wpab-bubble-item {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.wpab-bubble-link {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  padding: 6px 12px !important;
-  color: #c3c4c7 !important;
-  text-decoration: none !important;
-  font-size: 13px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
-  line-height: 32px !important;
-  height: 32px !important;
-  transition: background 0.1s, color 0.1s !important;
-  border: none !important;
-  background: none !important;
-  box-sizing: border-box !important;
-}
-
-.wpab-bubble-link:hover {
-  background: #2c3338 !important;
-  color: #72aee6 !important;
-}
-
-.wpab-bubble-link .wpab-menu-icon {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 20px !important;
-  height: 20px !important;
-  flex-shrink: 0 !important;
-  font-size: 20px !important;
-  line-height: 1 !important;
-}
-
-.wpab-bubble-link .wpab-menu-icon img {
-  width: 20px !important;
-  height: 20px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-}
-
-.wpab-bubble-link .wpab-menu-text {
-  flex: 1 !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-}
-
-.wpab-has-sub > .wpab-bubble-link .wpab-menu-arrow {
-  display: inline-block !important;
-  width: 0 !important;
-  height: 0 !important;
-  border-left: 4px solid currentColor !important;
-  border-top: 3px solid transparent !important;
-  border-bottom: 3px solid transparent !important;
-  margin-left: auto !important;
-  flex-shrink: 0 !important;
-  transition: transform 0.15s !important;
-}
-
-.wpab-has-sub.wpab-sub-open > .wpab-bubble-link .wpab-menu-arrow {
-  transform: rotate(90deg) !important;
-}
-
-/* --- Bubble Submenu (match WP) --- */
-.wpab-bubble-sublist {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: none;
-  background: #2c3338 !important;
-}
-
-.wpab-bubble-sublink {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  padding: 6px 12px 6px 40px !important;
-  color: #c3c4c7 !important;
-  text-decoration: none !important;
-  font-size: 13px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
-  line-height: 28px !important;
-  height: 28px !important;
-  transition: background 0.1s, color 0.1s !important;
-  border: none !important;
-  background: none !important;
-  box-sizing: border-box !important;
-}
-
-.wpab-bubble-sublink:hover {
-  background: #3c434a !important;
-  color: #72aee6 !important;
-}
-
-/* --- Bubble Menu Separator --- */
-.wpab-bubble-item + .wpab-bubble-item {
-  border-top: 1px solid #3c434a;
-}
-
-/* --- Bubble Menu Header --- */
-.wpab-bubble-header {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  padding: 8px 12px !important;
-  border-bottom: 1px solid #3c434a !important;
-  color: #c3c4c7 !important;
-  font-size: 11px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  background: #2c3338 !important;
-}
-
-.wpab-bubble-header img {
-  width: 16px !important;
-  height: 16px !important;
-  border-radius: 2px !important;
 }
